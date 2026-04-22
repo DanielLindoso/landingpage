@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brasil 2002</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+   /* FOOTER - O TOQUE FINAL DO CAMPEÃO */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 4px solid #ffdf00;
+    padding: 60px 20px 20px;
+    margin-top: 50px;
+    color: #fff;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-logo h3 {
+    font-size: 28px;
+    color: #ffdf00;
+    margin-bottom: 10px;
+}
+
+.footer-links h4, .footer-social h4 {
+    color: #00c853;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffdf00;
+    padding-left: 5px;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+.social-icon:hover {
+    background: #0033a0;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 13px;
+    color: #888;
+}
+
+.footer-bottom b {
+    color: #ffdf00;
+} 
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: white;
+
+    background: linear-gradient(-45deg, #ffdf00, #00c853, #0033a0, #ffdf00);
+    background-size: 400% 400%;
+    animation: fundoBrasil 10s ease infinite;
+}
+
+@keyframes fundoBrasil {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* HEADER */
+header {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)),
+    url('https://www.rbsdirect.com.br/imagesrc/25637871.jpg?version=1575255600');
+
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    font-size: 65px;
+    color: #ffdf00;
+    text-shadow: 0 0 30px #ffdf00;
+}
+
+/* BOTÕES */
+.btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary { background: #ffdf00; }
+.btn-secondary { background: rgba(255,255,255,0.2); color:white; }
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.box {
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+/* TITULO */
+h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg,#ffdf00,#00c853,#0033a0);
+    margin-top: 8px;
+}
+
+/* LENDAS */
+.lendas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+}
+
+.card-player {
+    background: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.card-player img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-player:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #ffdf00;
+}
+
+/* TIMELINE */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(#ffdf00,#00c853,#0033a0);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0;
+    position: relative;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+.timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item.right {
+    justify-content: flex-start;
+}
+
+.timeline-content {
+    width: 45%;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.timeline-content img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffdf00;
+}
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #ffdf00;
+    border-radius: 50%;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* FINAL */
+.final {
+    text-align: center;
+    background: linear-gradient(135deg,#0033a0,#00c853);
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div>
+    <h1>Brasil 2002</h1>
+    <p>🏆 Pentacampeão • Invicto • 18 gols</p>
+
+    <button class="btn btn-primary" onclick="document.querySelector('.final').scrollIntoView({behavior:'smooth'})">Assistir</button>
+    <button class="btn btn-secondary" onclick="document.querySelector('.campanha').scrollIntoView({behavior:'smooth'})">Ver jogos</button>
+</div>
+</header>
+
+<section>
+
+<div class="box">
+<h2>Introdução</h2>
+
+<p>A Copa do Mundo de 2002 foi um marco histórico no futebol mundial. Realizada conjuntamente pela Coreia do Sul e pelo Japão, foi a primeira edição sediada em dois países e também a primeira no continente asiático, expandindo o alcance global do esporte.</p>
+
+<p>O Brasil chegou ao torneio sob forte pressão após uma campanha irregular nas eliminatórias sul-americanas, classificando-se apenas nas últimas rodadas. Sob o comando do técnico Luiz Felipe Scolari, o “Felipão”, a equipe passou por uma reformulação tática e emocional, apostando em um sistema equilibrado e eficiente.</p>
+
+<p>O grande destaque foi o chamado “trio mágico”: Ronaldo, Rivaldo e Ronaldinho Gaúcho. Juntos, eles combinaram habilidade, criatividade e poder de finalização, sendo responsáveis pela maior parte dos gols da equipe. Ronaldo, em especial, protagonizou uma das maiores histórias de superação do esporte, retornando de lesões graves para se tornar o artilheiro da competição com 8 gols.</p>
+
+<p>A campanha brasileira foi perfeita: 7 jogos, 7 vitórias, 18 gols marcados e apenas 4 sofridos. O time venceu seleções fortes como Inglaterra, Bélgica e Alemanha, demonstrando superioridade técnica e mental em momentos decisivos.</p>
+
+<p>Na final, contra a Alemanha, Ronaldo marcou dois gols e garantiu o pentacampeonato mundial, consolidando o Brasil como a seleção mais vitoriosa da história das Copas do Mundo.</p>
+
+</div>
+
+<div class="box">
+<h2>Lendas do Penta</h2>
+
+<div class="lendas">
+
+<div class="card-player">
+<img src="https://terceirotempo.uol.com.br/imagens/57/70/w500_h140_qfl_fto_15770.webp">
+<h3>Ronaldo</h3>
+<p>⚽ 8 gols • Artilheiro</p>
+</div>
+
+<div class="card-player">
+<img src="https://cloudfront-us-east-1.images.arcpublishing.com/estadao/DMSJMUPDXRM2RKTFF4RCOYEGMY.jpg">
+<h3>Rivaldo</h3>
+<p>⚽ 5 gols • Decisivo</p>
+</div>
+
+<div class="card-player">
+<img src="https://s2-ge.glbimg.com/x6Cm18FUFeXEeZFcnTUqQKL32WY=/0x0:1632x2000/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2022/V/T/0E7ZGpR1W03h12oQ1PJA/gettyimages-829182680.jpg">
+<h3>Ronaldinho</h3>
+<p>🎯 Gol histórico</p>
+</div>
+
+</div>
+</div>
+
+<div class="box campanha">
+<h2>Campanha Completa</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-content">
+<img src="https://i.ytimg.com/vi/u_mvrbuOj6E/mqdefault.jpg">
+<h3>Brasil 2 x 1 Turquia</h3>
+<p>⚽ Ronaldo, Rivaldo</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<img src="https://images.futebolinterior.com.br/2020/11/0002050470653_img.jpg">
+<h3>Brasil 4 x 0 China</h3>
+<p>⚽ Roberto Carlos, Rivaldo, Ronaldinho, Ronaldo</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-content">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgckpfF7-Thq0fM8VgIVeEBQMndoBllw7dgw&s">
+<h3>Brasil 5 x 2 Costa Rica</h3>
+<p>⚽ Ronaldo (2), Rivaldo, Edmílson, Júnior</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<img src="https://jpimg.com.br/uploads/2018/07/1211293.161602.jpg">
+<h3>Brasil 2 x 0 Bélgica</h3>
+<p>⚽ Rivaldo, Ronaldo</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-content">
+<img src="https://i.ytimg.com/vi/LY2F9mNXJWw/hqdefault.jpg">
+<h3>Brasil 2 x 1 Inglaterra</h3>
+<p>⚽ Rivaldo, Ronaldinho</p>
+</div>
+</div>
+
+<div class="timeline-item right">
+<div class="timeline-content">
+<img src="https://i.pinimg.com/736x/ea/8b/a1/ea8ba190a7e5fdda4a31eae458f29ac2.jpg">
+<h3>Brasil 1 x 0 Turquia</h3>
+<p>⚽ Ronaldo</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-content">
+<img src="https://s2-ge.glbimg.com/3K3OECOlopZTSdipyGyyAP5Ityo=/0x0:2000x1264/1008x0/smart/filters:strip_icc()/s.glbimg.com/es/ge/f/original/2014/06/04/ronaldo_2002_ap.jpg">
+<h3>Final: Brasil 2 x 0 Alemanha</h3>
+<p>⚽ Ronaldo (2)</p>
+</div>
+</div>
+
+</div>
+
+<div class="box final">
+<h2>Veja a trajetória</h2>
+<iframe src="https://www.youtube.com/embed/ImudoaMM61U"></iframe>
+</div>
+
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <h3>Brasil 2002</h3>
+            <p>Homenagem à maior seleção de todos os tempos. Onde o futebol arte se tornou eterno.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>Navegação</h4>
+            <ul>
+                <li><a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Início</a></li>
+                <li><a href="#" onclick="document.querySelector('.lendas').scrollIntoView({behavior:'smooth'})">Lendas</a></li>
+                <li><a href="#" onclick="document.querySelector('.campanha').scrollIntoView({behavior:'smooth'})">Campanha</a></li>
+                <li><a href="#" onclick="document.querySelector('.final').scrollIntoView({behavior:'smooth'})">Vídeo</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-social">
+    <h4>Siga a Amarelinha</h4>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/CBF/" class="social-icon" target="_blank" rel="noopener noreferrer">FB</a>
+        <a href="https://www.instagram.com/brasil/" class="social-icon" target="_blank" rel="noopener noreferrer">IG</a>
+        <a href="https://www.youtube.com/channel/UCdQuDaRww5NkKpQQ1BJBWww" class="social-icon" target="_blank" rel="noopener noreferrer">YT</a>
+        <a href="https://x.com/CBF_Futebol" class="social-icon" target="_blank" rel="noopener noreferrer">TW</a>
+    </div>
+    <p style="margin-top: 20px; font-size: 14px;"></p>
+</div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Projeto Brasil 2002 - Feito com <b>Amor ao Futebol</b></p>
+    </div>
+</footer>
+<script>
+const items = document.querySelectorAll('.timeline-item');
+
+function revealOnScroll() {
+    const trigger = window.innerHeight * 0.85;
+
+    items.forEach(item => {
+        if (item.getBoundingClientRect().top < trigger) {
+            item.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>
